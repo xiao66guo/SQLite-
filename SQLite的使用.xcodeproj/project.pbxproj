@@ -13,6 +13,8 @@
 		DB1EF80E1E47033900127104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1EF80C1E47033900127104 /* Main.storyboard */; };
 		DB1EF8101E47033900127104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1EF80F1E47033900127104 /* Assets.xcassets */; };
 		DB1EF8131E47033900127104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1EF8111E47033900127104 /* LaunchScreen.storyboard */; };
+		DB1EF81D1E47036100127104 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1EF81C1E47036100127104 /* libsqlite3.dylib */; };
+		DB1EF8211E47039000127104 /* XGSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1EF8201E47039000127104 /* XGSQLiteManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		DB1EF80F1E47033900127104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB1EF8121E47033900127104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB1EF8141E47033900127104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB1EF81C1E47036100127104 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		DB1EF81F1E47039000127104 /* XGSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGSQLiteManager.h; sourceTree = "<group>"; };
+		DB1EF8201E47039000127104 /* XGSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGSQLiteManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1EF81D1E47036100127104 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,7 @@
 		DB1EF7F71E47033900127104 = {
 			isa = PBXGroup;
 			children = (
+				DB1EF81C1E47036100127104 /* libsqlite3.dylib */,
 				DB1EF8021E47033900127104 /* SQLite的使用 */,
 				DB1EF8011E47033900127104 /* Products */,
 			);
@@ -58,6 +65,7 @@
 		DB1EF8021E47033900127104 /* SQLite的使用 */ = {
 			isa = PBXGroup;
 			children = (
+				DB1EF81E1E47037600127104 /* SQLite */,
 				DB1EF8061E47033900127104 /* AppDelegate.h */,
 				DB1EF8071E47033900127104 /* AppDelegate.m */,
 				DB1EF8091E47033900127104 /* ViewController.h */,
@@ -77,6 +85,15 @@
 				DB1EF8041E47033900127104 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB1EF81E1E47037600127104 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				DB1EF81F1E47039000127104 /* XGSQLiteManager.h */,
+				DB1EF8201E47039000127104 /* XGSQLiteManager.m */,
+			);
+			path = SQLite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1EF8211E47039000127104 /* XGSQLiteManager.m in Sources */,
 				DB1EF80B1E47033900127104 /* ViewController.m in Sources */,
 				DB1EF8081E47033900127104 /* AppDelegate.m in Sources */,
 				DB1EF8051E47033900127104 /* main.m in Sources */,
