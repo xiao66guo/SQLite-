@@ -7,7 +7,10 @@
 //
 
 #import "Person.h"
-
+#import <NSObject+YYModel.h>
 @implementation Person
 
+-(NSString *)description {
+    return [self yy_modelDescription];
+}
 @end
