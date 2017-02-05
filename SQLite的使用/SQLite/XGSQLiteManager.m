@@ -44,6 +44,36 @@
  *  执行 sql ，返回查询字典数组
  */
 - (NSArray *)queryRecordSet:(NSString *)sql {
+    
+    // 1> 预编译 sql，检查语法的有效性
+    
+    /**
+     参数：
+     1、数据库句柄
+     2、要执行的sql 中的C 语言的字符串
+     3、sql 语句以字节为单位的长度，strlen，如果传入 -1，会自动计算
+     4、编译完成的语句
+        —— 后续针对查询结果的操作，全部要基于 stmt
+        —— stmt 必须要释放，否则会内存泄露哦
+     5、sql 语句的尾指针，通常传入 NULL
+     
+     返回值
+      如果是 SQLITE_OK 表示预编译成功
+     */
+    
+    sqlite3_stmt *stmt = NULL;
+    if (sqlite3_prepare_v2(_db, sql.UTF8String, -1, &stmt, NULL) != SQLITE_OK) {
+        NSLog(@"SQL 语法错误");
+        return nil;
+    }else{
+        NSLog(@"SQL 语法正确");
+    }
+    
+    // 从 stmt 中通过 step 获得查询结果
+    
+    
+    // 3> 释放语句
+    sqlite3_finalize(stmt);
     return nil;
 }
 
