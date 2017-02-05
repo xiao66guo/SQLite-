@@ -12,6 +12,18 @@
 @implementation Person
 
 #pragma mark - 数据库操作方法
++ (NSArray<Person *> *)person {
+    // 1、准备 sql
+    NSString *sql = @"SELECT id, name, age, height FROM T_Person;";
+    
+    // 2、执行 sql 获得一个 ‘字典数组’
+    NSArray *array = [[XGSQLiteManager shareManager] queryRecordSet:sql];
+    
+    // 3、字典转模型,返回模型数组
+    return [NSArray yy_modelArrayWithClass:[self class] json:array];
+}
+
+
 // 更新和删除存在一个共同的问题：如果记录不存在，会正常执行 SQL,不会报错
 - (BOOL)deletePerson {
     // 1、准备sql

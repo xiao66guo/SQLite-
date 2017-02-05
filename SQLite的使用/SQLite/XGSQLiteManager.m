@@ -40,6 +40,13 @@
 }
 
 #pragma mark - 数据库操作方法
+/**
+ *  执行 sql ，返回查询字典数组
+ */
+- (NSArray *)queryRecordSet:(NSString *)sql {
+    return nil;
+}
+
 - (NSInteger)changeRows {
     // 返回数据库操作影响的行数
     return sqlite3_changes(_db);

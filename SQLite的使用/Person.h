@@ -34,5 +34,5 @@
 /**
  *  返回数据库中所有 person 的模型数组
  */
-+(Person *)person;
++(NSArray <Person *>*)person;
 @end

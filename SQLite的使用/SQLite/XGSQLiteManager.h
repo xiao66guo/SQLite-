@@ -15,6 +15,15 @@
 +(instancetype)shareManager;
 
 /**
+ *  执行 sql，返回查询的字典数组
+ *
+ *  @param sql sql
+ *
+ *  @return 返回字典数组
+ */
+- (NSArray *)queryRecordSet:(NSString *)sql;
+
+/**
  *  执行SQL
  *
  *  @param sql sql 语句

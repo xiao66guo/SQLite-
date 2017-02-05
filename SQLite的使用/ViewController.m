@@ -20,10 +20,14 @@
     [super viewDidLoad];
     
 //    [XGSQLiteManager shareManager];
-    [self deleteDemo];
+    [self persons];
 }
 
 #pragma mark - 数据库操作
+- (void)persons {
+    NSLog(@"%@",[Person person]);
+}
+
 - (void)deleteDemo {
     NSDictionary *dict = @{@"id":@2,@"name":@"小松鼠",@"age":@25,@"height":@1.75};
     Person *p = [Person yy_modelWithJSON:dict];
