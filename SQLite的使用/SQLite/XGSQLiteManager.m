@@ -82,5 +82,26 @@
         NSLog(@"数据库打开失败");
     }
     NSLog(@"打开成功：%@",path);
+    
+    // 2、创建数据表
+    if ([self createTale2]) {
+        NSLog(@"创表成功");
+    }else{
+        NSLog(@"创表失败");
+    }
+}
+
+#pragma mark - 创建数据表
+- (BOOL)createTale2 {
+    // 1、准备 sql
+    NSString *sql = @"CREATE TABLE IF NOT EXISTS 'T_Person' ("
+        @"'id' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+        @"'name' TEXT,"
+        @"'age' INTEGER,"
+        @"'height' REAL"
+   @");";
+    
+    // 2、执行 sql 并且返回结果
+    return [self execSQL:sql];
 }
 @end
