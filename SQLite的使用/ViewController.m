@@ -25,7 +25,7 @@
 
 #pragma mark - 数据库操作
 - (void)insertDemo {
-    NSDictionary *dict = @{@"name":@"zhangsan",@"age":@14,@"height":@1.76};
+    NSDictionary *dict = @{@"name":@"gua",@"age":@14,@"height":@1.76};
     Person *p = [Person yy_modelWithJSON:dict];
     
     // 插入数据库

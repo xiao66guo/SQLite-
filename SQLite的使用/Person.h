@@ -11,7 +11,7 @@
  *  个人模型
  */
 @interface Person : NSObject
-@property (nonatomic, assign) int id;
+@property (nonatomic, assign) NSInteger id;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) int age;
 @property (nonatomic, assign) float height;

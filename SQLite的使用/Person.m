@@ -20,8 +20,13 @@
     // 1> 获取单例
     XGSQLiteManager *manager = [XGSQLiteManager shareManager];
     
-    // 2> 执行sql
-    return [manager execSQL:sql];
+    // 2> 执行sql - 只是单纯的执行 sql 将对象信息插入到数据库，但是没有更新 id,id是自增长，有数据库负责
+    [manager execSQL:sql];
+    
+    // 记录id
+    _id = [manager lastRowId];
+    
+    return _id > 0;
 }
 
 

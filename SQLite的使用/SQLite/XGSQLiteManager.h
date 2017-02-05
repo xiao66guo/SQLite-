@@ -22,4 +22,8 @@
  *  @return 是否成功
  */
 - (BOOL)execSQL:(NSString *)sql;
+/**
+ *  末次插入数据的自增长 id
+ */
+- (NSInteger)lastRowId;
 @end

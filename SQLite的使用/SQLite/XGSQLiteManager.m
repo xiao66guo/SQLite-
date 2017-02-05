@@ -40,6 +40,11 @@
 }
 
 #pragma mark - 数据库操作方法
+- (NSInteger)lastRowId {
+    // 返回最后一条插入数据的自增长 id
+    return sqlite3_last_insert_rowid(_db);
+}
+
 /**
  *  在 sql 的开发中，绝大多数的代码都是一样的，只是 sql 不同
  *  本质上都是在执行 sql 指令
