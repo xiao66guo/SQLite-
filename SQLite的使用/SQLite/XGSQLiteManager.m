@@ -87,7 +87,51 @@
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         
-        // 设置字典的内容
+        // 设置字典的内容 - 以 sqlite3_column_ 开头
+        // 1> 每一行有多少列
+        int colCount = sqlite3_column_count(stmt);
+        
+        // 2>遍历每一列，获取字段名和对应的value值
+        for (int col = 0; col < colCount; col++) {
+            // 3> 取出对应列的名称：字段名称
+            const char *cName = sqlite3_column_name(stmt,col);
+            NSString *name = [NSString stringWithUTF8String:cName];
+            
+            // 4> 取出每一列的值
+            int type = sqlite3_column_type(stmt,col);
+            
+            // 5> 根据 type 获取对应的值
+            switch (type) {
+                case SQLITE_INTEGER:
+                {
+                    int value = sqlite3_column_int(stmt, col);
+                    // 设置字典
+                    dict[name] = @(value);
+                }
+                    break;
+                case SQLITE_FLOAT:
+                {
+                    double value = sqlite3_column_double(stmt, col);
+                    // 设置字典
+                    dict[name] = @(value);
+                }
+                    break;
+                case SQLITE3_TEXT:
+                {
+                    const char *cValue = (const char *)sqlite3_column_text(stmt, col);
+                    NSString *value = [NSString stringWithUTF8String:cValue];
+                    // 设置字典
+                    dict[name] = value;
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+            NSLog(@"name = %@   type = %d",name, type);
+            
+        }
+        NSLog(@"%d",colCount);
         
         
         // 将字典添加到数组
