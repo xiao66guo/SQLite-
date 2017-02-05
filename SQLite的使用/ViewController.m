@@ -20,8 +20,23 @@
     [super viewDidLoad];
     
 //    [XGSQLiteManager shareManager];
-    [self personDemo2];
+    [self insertDemo];
 }
+
+#pragma mark - 数据库操作
+- (void)insertDemo {
+    NSDictionary *dict = @{@"name":@"zhangsan",@"age":@14,@"height":@1.76};
+    Person *p = [Person yy_modelWithJSON:dict];
+    
+    // 插入数据库
+    if ([p insertPerson]) {
+        NSLog(@"插入数据成功 %@",p);
+    }else{
+        NSLog(@"插入数据失败");
+    }
+}
+
+
 #pragma mark - 字典转模型
 - (void)personDemo2 {
     NSArray *array = @[
