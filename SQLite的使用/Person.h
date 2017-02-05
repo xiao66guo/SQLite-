@@ -15,4 +15,24 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) int age;
 @property (nonatomic, assign) float height;
+
+/**
+ *  将当前对象插入到数据库
+ */
+- (BOOL)insertPerson;
+
+/**
+ *  将当前对象的内容更新到数据库
+ */
+- (BOOL)updatePerson;
+
+/**
+ *  将当前对象从数据库中删除
+ */
+- (BOOL)deletePerson;
+
+/**
+ *  返回数据库中所有 person 的模型数组
+ */
++(Person *)person;
 @end
