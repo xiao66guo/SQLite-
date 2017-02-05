@@ -20,10 +20,23 @@
     [super viewDidLoad];
     
 //    [XGSQLiteManager shareManager];
-    [self insertDemo];
+    [self updateDemo];
 }
 
 #pragma mark - 数据库操作
+
+- (void)updateDemo {
+    NSDictionary *dict = @{@"id":@1,@"name":@"小松鼠",@"age":@25,@"height":@1.75};
+    Person *p = [Person yy_modelWithJSON:dict];
+    
+    // 更新数据库
+    if ([p updatePerson]) {
+        NSLog(@"更新数据成功 %@",p);
+    }else{
+        NSLog(@"更新数据失败");
+    }
+}
+
 - (void)insertDemo {
     NSDictionary *dict = @{@"name":@"gua",@"age":@14,@"height":@1.76};
     Person *p = [Person yy_modelWithJSON:dict];

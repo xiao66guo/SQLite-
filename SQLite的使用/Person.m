@@ -12,6 +12,21 @@
 @implementation Person
 
 #pragma mark - 数据库操作方法
+- (BOOL)updatePerson {
+    // 1、准备sql
+    NSString *sql = [NSString stringWithFormat:@"UPDATE T_Person SET name = '%@', age = %d, height = %f WHERE id = %zd;",_name, _age, _height, _id];
+    
+    // 2、执行sql
+    // 1> 获取单例
+    XGSQLiteManager *manager = [XGSQLiteManager shareManager];
+    
+    // 2> 执行sql - 只是单纯的执行 sql 将对象信息插入到数据库，但是没有更新 id,id是自增长，有数据库负责
+    [manager execSQL:sql];
+    
+    // 3> 如果更新行数 == 1,表示成功
+    return manager.changeRows == 1;
+}
+
 - (BOOL)insertPerson {
     // 1、准备sql
     NSString *sql = [NSString stringWithFormat:@"INSERT INTO T_Person (name, age, height) VALUES ('%@', '%d', '%f')",_name, _age, _height];

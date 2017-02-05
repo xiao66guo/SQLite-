@@ -40,6 +40,11 @@
 }
 
 #pragma mark - 数据库操作方法
+- (NSInteger)changeRows {
+    // 返回数据库操作影响的行数
+    return sqlite3_changes(_db);
+}
+
 - (NSInteger)lastRowId {
     // 返回最后一条插入数据的自增长 id
     return sqlite3_last_insert_rowid(_db);

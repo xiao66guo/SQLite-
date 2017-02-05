@@ -26,4 +26,9 @@
  *  末次插入数据的自增长 id
  */
 - (NSInteger)lastRowId;
+
+/**
+ *  修改的数据行数
+ */
+- (NSInteger)changeRows;
 @end
