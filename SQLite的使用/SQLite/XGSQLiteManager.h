@@ -13,4 +13,13 @@
 @interface XGSQLiteManager : NSObject
 
 +(instancetype)shareManager;
+
+/**
+ *  执行SQL
+ *
+ *  @param sql sql 语句
+ *
+ *  @return 是否成功
+ */
+- (BOOL)execSQL:(NSString *)sql;
 @end
