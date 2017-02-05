@@ -20,10 +20,35 @@
     [super viewDidLoad];
     
 //    [XGSQLiteManager shareManager];
-    [self morePerson2];
+    [self morePerson3];
 }
 
 #pragma mark - 批量插入数据
+- (void)morePerson3 {
+    NSLog(@"开始插入数据");
+    // 开启事务
+    [[XGSQLiteManager shareManager] execSQL:@"BEGIN TRANSACTION;"];
+    
+    NSTimeInterval start = CACurrentMediaTime();
+    for (NSInteger i = 0; i < 10000;  i++) {
+        NSString *name = [@"小明" stringByAppendingFormat:@"%zd",i];
+        NSDictionary *dict = @{@"name":name, @"age":@18, @"height":@1.6};
+        Person *p  = [Person yy_modelWithJSON:dict];
+        
+        // 如果插入成功，就提交事务，如果失败，就执行回滚事务并退出循环
+        if (![p insertPerson]) {
+            // 回滚事务 - 就是恢复到建立快照之前的状态下
+            [[XGSQLiteManager shareManager] execSQL:@"ROLLBACK TRANSACTION;"];
+            
+            break;
+        }
+    }
+    // 提交事务
+    [[XGSQLiteManager shareManager] execSQL:@"COMMIT TRANSACTION;"];
+    
+    NSLog(@"%f",CACurrentMediaTime() - start);
+}
+
 // 模拟突然断电的情况
 - (void)morePerson2 {
     NSLog(@"开始插入数据");
@@ -43,6 +68,7 @@
             // 回滚事务 - 就是恢复到建立快照之前的状态下
             [[XGSQLiteManager shareManager] execSQL:@"ROLLBACK TRANSACTION;"];
             
+            // 如果没后‘break’，那么在执行回滚的时候会删除最后的1000条数据，其余的9000条数据会慢慢的做插入操作,也不知道到底是少了哪些数据
             break;
         }
     }
