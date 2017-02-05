@@ -70,11 +70,30 @@
     }
     
     // 从 stmt 中通过 step 获得查询结果
-    
+    NSArray *result = [self recordSetWithStmt:stmt];
     
     // 3> 释放语句
     sqlite3_finalize(stmt);
-    return nil;
+    return result;
+}
+
+/**
+ *  从 stmt 中获取所有的记录
+ */
+- (NSArray *)recordSetWithStmt:(sqlite3_stmt *)stmt {
+    // 通过 step 单步执行获得每一条记录
+    NSMutableArray *arrayM = [NSMutableArray array];
+    
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        
+        // 设置字典的内容
+        
+        
+        // 将字典添加到数组
+        [arrayM addObject:dict];
+    }
+    return arrayM.copy;
 }
 
 - (NSInteger)changeRows {
