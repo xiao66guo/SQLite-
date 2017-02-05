@@ -15,6 +15,7 @@
 		DB1EF8131E47033900127104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1EF8111E47033900127104 /* LaunchScreen.storyboard */; };
 		DB1EF81D1E47036100127104 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1EF81C1E47036100127104 /* libsqlite3.dylib */; };
 		DB1EF8211E47039000127104 /* XGSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1EF8201E47039000127104 /* XGSQLiteManager.m */; };
+		DB1EF8231E4720BE00127104 /* db.sql in Resources */ = {isa = PBXBuildFile; fileRef = DB1EF8221E4720BE00127104 /* db.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		DB1EF81C1E47036100127104 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
 		DB1EF81F1E47039000127104 /* XGSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGSQLiteManager.h; sourceTree = "<group>"; };
 		DB1EF8201E47039000127104 /* XGSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGSQLiteManager.m; sourceTree = "<group>"; };
+		DB1EF8221E4720BE00127104 /* db.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				DB1EF81F1E47039000127104 /* XGSQLiteManager.h */,
 				DB1EF8201E47039000127104 /* XGSQLiteManager.m */,
+				DB1EF8221E4720BE00127104 /* db.sql */,
 			);
 			path = SQLite;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				DB1EF8131E47033900127104 /* LaunchScreen.storyboard in Resources */,
 				DB1EF8101E47033900127104 /* Assets.xcassets in Resources */,
+				DB1EF8231E4720BE00127104 /* db.sql in Resources */,
 				DB1EF80E1E47033900127104 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
