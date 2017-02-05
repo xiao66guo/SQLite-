@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53A1B9DB047C1BA91270C751 /* libPods-SQLite的使用.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A400B5F4E63AB48C53BABB43 /* libPods-SQLite的使用.a */; };
 		DB1EF8051E47033900127104 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1EF8041E47033900127104 /* main.m */; };
 		DB1EF8081E47033900127104 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1EF8071E47033900127104 /* AppDelegate.m */; };
 		DB1EF80B1E47033900127104 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1EF80A1E47033900127104 /* ViewController.m */; };
@@ -16,9 +17,12 @@
 		DB1EF81D1E47036100127104 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1EF81C1E47036100127104 /* libsqlite3.dylib */; };
 		DB1EF8211E47039000127104 /* XGSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1EF8201E47039000127104 /* XGSQLiteManager.m */; };
 		DB1EF8231E4720BE00127104 /* db.sql in Resources */ = {isa = PBXBuildFile; fileRef = DB1EF8221E4720BE00127104 /* db.sql */; };
+		DB1EF8261E47247600127104 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1EF8251E47247600127104 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A400B5F4E63AB48C53BABB43 /* libPods-SQLite的使用.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQLite的使用.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5CD9F18ED7C581DDCA31E36 /* Pods-SQLite的使用.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLite的使用.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQLite的使用/Pods-SQLite的使用.release.xcconfig"; sourceTree = "<group>"; };
 		DB1EF8001E47033900127104 /* SQLite的使用.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SQLite的使用.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1EF8041E47033900127104 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB1EF8061E47033900127104 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,6 +37,9 @@
 		DB1EF81F1E47039000127104 /* XGSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGSQLiteManager.h; sourceTree = "<group>"; };
 		DB1EF8201E47039000127104 /* XGSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGSQLiteManager.m; sourceTree = "<group>"; };
 		DB1EF8221E4720BE00127104 /* db.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.sql; sourceTree = "<group>"; };
+		DB1EF8241E47247600127104 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		DB1EF8251E47247600127104 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		E91C71FF29331EAE5360E9DA /* Pods-SQLite的使用.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLite的使用.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQLite的使用/Pods-SQLite的使用.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,18 +48,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB1EF81D1E47036100127104 /* libsqlite3.dylib in Frameworks */,
+				53A1B9DB047C1BA91270C751 /* libPods-SQLite的使用.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		123BCF9A99420C5C345E3EF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A400B5F4E63AB48C53BABB43 /* libPods-SQLite的使用.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB1EF7F71E47033900127104 = {
 			isa = PBXGroup;
 			children = (
 				DB1EF81C1E47036100127104 /* libsqlite3.dylib */,
 				DB1EF8021E47033900127104 /* SQLite的使用 */,
 				DB1EF8011E47033900127104 /* Products */,
+				FF104B2DFCEDA41C85718D33 /* Pods */,
+				123BCF9A99420C5C345E3EF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +90,8 @@
 				DB1EF8071E47033900127104 /* AppDelegate.m */,
 				DB1EF8091E47033900127104 /* ViewController.h */,
 				DB1EF80A1E47033900127104 /* ViewController.m */,
+				DB1EF8241E47247600127104 /* Person.h */,
+				DB1EF8251E47247600127104 /* Person.m */,
 				DB1EF80C1E47033900127104 /* Main.storyboard */,
 				DB1EF80F1E47033900127104 /* Assets.xcassets */,
 				DB1EF8111E47033900127104 /* LaunchScreen.storyboard */,
@@ -99,6 +119,15 @@
 			path = SQLite;
 			sourceTree = "<group>";
 		};
+		FF104B2DFCEDA41C85718D33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E91C71FF29331EAE5360E9DA /* Pods-SQLite的使用.debug.xcconfig */,
+				B5CD9F18ED7C581DDCA31E36 /* Pods-SQLite的使用.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB1EF8171E47033900127104 /* Build configuration list for PBXNativeTarget "SQLite的使用" */;
 			buildPhases = (
+				4BD2D1D93AA194B831A16DF8 /* [CP] Check Pods Manifest.lock */,
 				DB1EF7FC1E47033900127104 /* Sources */,
 				DB1EF7FD1E47033900127104 /* Frameworks */,
 				DB1EF7FE1E47033900127104 /* Resources */,
+				6945BD15089E415D1AE8F41E /* [CP] Embed Pods Frameworks */,
+				9F8EAF49099D03602D003A32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,6 +198,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4BD2D1D93AA194B831A16DF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6945BD15089E415D1AE8F41E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SQLite的使用/Pods-SQLite的使用-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F8EAF49099D03602D003A32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SQLite的使用/Pods-SQLite的使用-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB1EF7FC1E47033900127104 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -173,6 +253,7 @@
 			files = (
 				DB1EF8211E47039000127104 /* XGSQLiteManager.m in Sources */,
 				DB1EF80B1E47033900127104 /* ViewController.m in Sources */,
+				DB1EF8261E47247600127104 /* Person.m in Sources */,
 				DB1EF8081E47033900127104 /* AppDelegate.m in Sources */,
 				DB1EF8051E47033900127104 /* main.m in Sources */,
 			);
@@ -286,6 +367,7 @@
 		};
 		DB1EF8181E47033900127104 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E91C71FF29331EAE5360E9DA /* Pods-SQLite的使用.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SQLite的使用/Info.plist";
@@ -297,6 +379,7 @@
 		};
 		DB1EF8191E47033900127104 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5CD9F18ED7C581DDCA31E36 /* Pods-SQLite的使用.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "SQLite的使用/Info.plist";

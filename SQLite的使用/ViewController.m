@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "XGSQLiteManager.h"
+#import "Person.h"
 @interface ViewController ()
 
 @end
@@ -20,5 +21,8 @@
     [XGSQLiteManager shareManager];
     
 }
-
+#pragma mark - 字典转模型
+- (void)personDemo {
+    
+}
 @end
