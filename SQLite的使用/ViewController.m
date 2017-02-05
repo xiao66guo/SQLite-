@@ -20,10 +20,21 @@
     [super viewDidLoad];
     
 //    [XGSQLiteManager shareManager];
-    [self updateDemo];
+    [self deleteDemo];
 }
 
 #pragma mark - 数据库操作
+- (void)deleteDemo {
+    NSDictionary *dict = @{@"id":@2,@"name":@"小松鼠",@"age":@25,@"height":@1.75};
+    Person *p = [Person yy_modelWithJSON:dict];
+    
+    // 更新数据库
+    if ([p deletePerson]) {
+        NSLog(@"删除数据成功");
+    }else{
+        NSLog(@"删除数据失败");
+    }
+}
 
 - (void)updateDemo {
     NSDictionary *dict = @{@"id":@1,@"name":@"小松鼠",@"age":@25,@"height":@1.75};
