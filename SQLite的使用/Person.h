@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-/**
- *  个人模型
- */
+
 @interface Person : NSObject
 @property (nonatomic, assign) NSInteger id;
 @property (nonatomic, copy) NSString *name;
